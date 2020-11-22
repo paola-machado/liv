@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:liv/Components/roundedButton.dart';
-import 'package:liv/Screens/Signin.dart';
+import 'package:liv/Components/roundedInput.dart';
+import 'package:liv/Components/roundedPassword.dart';
+import 'package:liv/Components/haveAccount.dart';
 import 'package:liv/Screens/Register.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:liv/Screens/Home.dart';
 
 class Signin extends StatelessWidget {
   @override
@@ -18,10 +19,54 @@ class Signin extends StatelessWidget {
           alignment: Alignment.center,
           children: <Widget>[
             Positioned(
-              top: 25,
-              left: 70,
+              top: 80,
+              left: 75,
               child: Image.asset("assets/images/logo.png",
                   height: size.height * 0.4),
+            ),
+            Positioned(
+              top: 200,
+              child: RoundedInput(
+                hintText: "E-mail",
+                onChanged: (value) {},
+              ),
+            ),
+            Positioned(
+              top: 270,
+              child: RoundedPassword(
+                onChanged: (value) {},
+              ),
+            ),
+            Positioned(
+              top: 370,
+              child: RoundedButton(
+                text: "Entrar",
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return Home();
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),
+            Positioned(
+              top: 550,
+              child: HaveAccount(
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return Register();
+                      },
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),

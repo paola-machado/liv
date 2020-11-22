@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:liv/Components/haveAccount.dart';
 import 'package:liv/Components/roundedButton.dart';
 import 'package:liv/Screens/Signin.dart';
 import 'package:liv/Screens/Register.dart';
@@ -19,13 +20,12 @@ class Landing extends StatelessWidget {
           children: <Widget>[
             Positioned(
               top: 25,
-              left: 70,
+              left: 75,
               child: Image.asset("assets/images/logo.png",
                   height: size.height * 0.4),
             ),
             SvgPicture.asset(
               "assets/images/art.svg",
-              height: size.height * 0.6,
             ),
             Positioned(
               top: 475,
@@ -44,9 +44,9 @@ class Landing extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 540,
-              child: FlatButton(
-                onPressed: () {
+              top: 550,
+              child: HaveAccount(
+                press: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -56,12 +56,6 @@ class Landing extends StatelessWidget {
                     ),
                   );
                 },
-                child: Text(
-                  "Não possui uma conta? Cadastre-se",
-                  style: GoogleFonts.openSans(
-                    textStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
-                  ),
-                ),
               ),
             ),
           ],
