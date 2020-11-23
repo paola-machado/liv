@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:liv/Screens/Landing.dart';
+import 'package:liv/Screens/Home.dart';
 
 void main() {
   runApp(new MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: Landing(),
+      home: Home(),
     );
   }
 }

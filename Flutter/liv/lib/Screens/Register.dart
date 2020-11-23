@@ -27,7 +27,7 @@ class Register extends StatelessWidget {
                   textStyle: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.w600,
-                    color: Color(0xFF25B0D6),
+                    color: Colors.lightBlue,
                   ),
                 ),
               ),
