@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "513372907435",
+    "firebase_url": "https://liv-test-dc258.firebaseio.com",
+    "project_id": "liv-test-dc258",
+    "storage_bucket": "liv-test-dc258.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513372907435:android:54303dea9005bc784854ee",
+        "android_client_info": {
+          "package_name": "com.test.liv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513372907435-02t0qbak18sfmh1vpp7hdakn8etk0kch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjHyxrBvwlscs4zjOPIODr5anhBxosV-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513372907435-02t0qbak18sfmh1vpp7hdakn8etk0kch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

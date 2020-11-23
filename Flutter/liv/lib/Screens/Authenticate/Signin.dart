@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:liv/Services/Auth.dart';
-import 'package:liv/Screens/Backgrounds/BackgroundLanding.dart';
-import 'package:liv/Components/haveAccount.dart';
 import 'package:liv/Components/roundedButton.dart';
-import 'package:liv/Screens/Authenticate/Signin.dart';
+import 'package:liv/Components/roundedInput.dart';
+import 'package:liv/Components/roundedPassword.dart';
+import 'package:liv/Components/haveAccount.dart';
+import 'package:liv/Screens/Backgrounds/BackgroundSignin.dart';
 import 'package:liv/Screens/Authenticate/Register.dart';
+import 'package:liv/Screens/Home.dart';
 
-class Landing extends StatelessWidget {
-  final AuthService _auth = AuthService();
-
+class Signin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Background(
@@ -16,7 +15,15 @@ class Landing extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 480),
+            SizedBox(height: 200),
+            RoundedInput(
+              hintText: "E-mail",
+              onChanged: (value) {},
+            ),
+            RoundedPassword(
+              onChanged: (value) {},
+            ),
+            SizedBox(height: 20),
             RoundedButton(
               text: "Entrar",
               press: () {
@@ -24,29 +31,13 @@ class Landing extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return Signin();
+                      return Home();
                     },
                   ),
                 );
               },
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 50),
-              child: RaisedButton(
-                child: Text("Entrar anonimamente"),
-                onPressed: () async {
-                  dynamic result = await _auth.signInAnon();
-
-                  if (result == null) {
-                    print('error signing in');
-                  } else {
-                    print('signed in');
-                    print(result);
-                  }
-                },
-              ),
-            ),
-            SizedBox(height: 20),
+            SizedBox(height: 150),
             HaveAccount(
               press: () {
                 Navigator.push(
