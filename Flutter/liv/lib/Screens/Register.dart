@@ -5,6 +5,7 @@ import 'package:liv/Components/roundedButton.dart';
 import 'package:liv/Components/roundedInput.dart';
 import 'package:liv/Components/roundedPassword.dart';
 import 'package:liv/Screens/Signin.dart';
+import 'package:liv/Screens/Home.dart';
 
 class Register extends StatelessWidget {
   @override
@@ -49,7 +50,16 @@ class Register extends StatelessWidget {
               top: 370,
               child: RoundedButton(
                 text: "Criar conta",
-                press: () {},
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return Home();
+                      },
+                    ),
+                  );
+                },
               ),
             ),
             Positioned(
