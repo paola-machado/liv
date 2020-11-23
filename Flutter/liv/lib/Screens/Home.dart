@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
                     ),
                     Text(
                       "POUPANÇA",
-                      style: TextStyle(color: Colors.white, fontSize: 18.0),
+                      style: TextStyle(color: Colors.white, fontSize: 20.0),
                     ),
                     IconButton(
                       icon: Icon(
@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
           elevation: 0.0,
           title: Text(
             "Carteira",
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(fontSize: 20, color: Colors.black),
           ),
           centerTitle: true,
           actions: <Widget>[
@@ -169,7 +169,7 @@ class _HomeState extends State<Home> {
             r"- R$ 16,20",
             "10-11-20",
             "Débito",
-            oddColour: const Color(0xFFF7F7F9),
+            oddColour: Colors.blue[50],
           ),
           accountItems("Depósito joão", r"+ R$ 58,00", "15-11-20", "Crédito"),
           accountItems(
@@ -177,7 +177,7 @@ class _HomeState extends State<Home> {
             r"- R$ 350,20",
             "15-11-20",
             "Débito",
-            oddColour: const Color(0xFFF7F7F9),
+            oddColour: Colors.blue[50],
           ),
           accountItems("Pizza", r"- R$ 25,00", "16-11-20", "Débito"),
           accountItems(
@@ -185,7 +185,7 @@ class _HomeState extends State<Home> {
             r"- R$ 86,98",
             "20-11-20",
             "Débito",
-            oddColour: const Color(0xFFF7F7F9),
+            oddColour: Colors.blue[50],
           ),
           accountItems(
             "Pagamento Ju",
