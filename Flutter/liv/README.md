@@ -1,5 +1,5 @@
 <h1 align="center">
-  Liv 📱 Mobile 
+  Liv Mobile 📱 
 </h1>
 
 ## ✋🏻 Pré-requisitos
