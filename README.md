@@ -9,10 +9,9 @@
 <p align="center">Teste desenvolvido para vaga de estágio frontend da empresa Liv Pagamentos.</p>
 
 
-## 👩🏼‍💻 Tecnologias
+## 👩🏼‍💻 Tecnologia
 
-- Flutter — Framework Dart para desenvolvimento mobile.
-- React.js — Framework Javascript para desenvolvimento web.
+- Flutter — Framework da linguagem Dart, usado para desenvolvimento mobile.
 
 ---
 
