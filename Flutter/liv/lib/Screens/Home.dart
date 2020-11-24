@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liv/Components/appDrawer.dart';
+import 'package:liv/Services/Auth.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -7,52 +8,55 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final AuthService _auth = AuthService();
+
   Card topArea() => Card(
         margin: EdgeInsets.all(10.0),
         elevation: 1.0,
         child: Container(
-            decoration: BoxDecoration(
-              color: Colors.lightBlue,
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-            padding: EdgeInsets.all(5.0),
-            child: Column(
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    IconButton(
-                      icon: Icon(
-                        Icons.arrow_back,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {},
+          decoration: BoxDecoration(
+            color: Colors.lightBlue,
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          padding: EdgeInsets.all(5.0),
+          child: Column(
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
                     ),
-                    Text(
-                      "POUPANÇA",
-                      style: TextStyle(color: Colors.white, fontSize: 20.0),
+                    onPressed: () {},
+                  ),
+                  Text(
+                    "POUPANÇA",
+                    style: TextStyle(color: Colors.white, fontSize: 20.0),
+                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
                     ),
-                    IconButton(
-                      icon: Icon(
-                        Icons.arrow_forward,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {},
-                    )
-                  ],
-                ),
-                Center(
-                  child: Padding(
-                    padding: EdgeInsets.all(5.0),
-                    child: Text(
-                      r"R$ 1.500,00",
-                      style: TextStyle(color: Colors.white, fontSize: 24.0),
-                    ),
+                    onPressed: () {},
+                  )
+                ],
+              ),
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.all(5.0),
+                  child: Text(
+                    r"R$ 1.500,00",
+                    style: TextStyle(color: Colors.white, fontSize: 24.0),
                   ),
                 ),
-                SizedBox(height: 35.0),
-              ],
-            )),
+              ),
+              SizedBox(height: 35.0),
+            ],
+          ),
+        ),
       );
 
   @override
@@ -74,10 +78,12 @@ class _HomeState extends State<Home> {
           actions: <Widget>[
             IconButton(
               icon: Icon(
-                Icons.search,
+                Icons.logout,
                 color: Colors.lightBlue,
               ),
-              onPressed: () {},
+              onPressed: () async {
+                await _auth.signOut();
+              },
             )
           ],
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liv/components/textContainer.dart';
+import 'package:email_validator/email_validator.dart';
 
 class RoundedInput extends StatelessWidget {
   final String hintText;
@@ -15,7 +16,10 @@ class RoundedInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextContainer(
-      child: TextField(
+      child: TextFormField(
+        validator: (value) => (
+            // value.isEmpty ? 'Digite seu e-mail' : null
+            EmailValidator.validate(value) ? null : "Utilize um e-mail válido"),
         onChanged: onChanged,
         cursorColor: Colors.blue[300],
         decoration: InputDecoration(
