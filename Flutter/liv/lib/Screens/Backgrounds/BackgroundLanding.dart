@@ -19,14 +19,14 @@ class Background extends StatelessWidget {
           alignment: Alignment.center,
           children: <Widget>[
             Positioned(
-              top: 25,
-              left: 75,
+              top: 40,
               child: Image.asset("assets/images/logo.png",
                   height: size.height * 0.4),
             ),
             Positioned(
               child: SvgPicture.asset(
                 "assets/images/art.svg",
+                height: size.height,
               ),
             ),
             child,

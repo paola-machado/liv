@@ -3,11 +3,21 @@ import 'package:liv/Services/Auth.dart';
 import 'package:liv/Screens/Backgrounds/BackgroundLanding.dart';
 import 'package:liv/Components/haveAccount.dart';
 import 'package:liv/Components/roundedButton.dart';
-import 'package:liv/Screens/Authenticate/Signin.dart';
+import 'package:liv/Screens/Authenticate/Authenticate.dart';
 import 'package:liv/Screens/Authenticate/Register.dart';
 
-class Landing extends StatelessWidget {
+class Landing extends StatefulWidget {
+  @override
+  _LandingState createState() => _LandingState();
+}
+
+class _LandingState extends State<Landing> {
   final AuthService _auth = AuthService();
+  bool showSignIn = true;
+
+  void toggleView() {
+    setState(() => showSignIn = !showSignIn);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,49 +26,34 @@ class Landing extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 480),
+            SizedBox(height: 520),
             RoundedButton(
               text: "Entrar",
               press: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return Signin();
-                    },
-                  ),
+                  MaterialPageRoute(builder: (context) => Authenticate()),
                 );
               },
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 50),
-              child: RaisedButton(
-                child: Text("Entrar anonimamente"),
+              child: FlatButton(
+                child: Text("Entrar anonimamente",
+                    style: TextStyle(color: Colors.blue[300])),
                 onPressed: () async {
                   dynamic result = await _auth.signInAnon();
 
                   if (result == null) {
-                    print('error signing in');
+                    print('Erro ao logar');
                   } else {
-                    print('signed in');
+                    print('Logado');
                     print(result);
                   }
                 },
               ),
             ),
-            SizedBox(height: 20),
-            HaveAccount(
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return Register();
-                    },
-                  ),
-                );
-              },
-            ),
+            SizedBox(height: 30),
           ],
         ),
       ),

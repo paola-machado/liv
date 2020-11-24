@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:liv/Screens/Landing.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Background extends StatelessWidget {
   final Widget child;
@@ -27,11 +27,6 @@ class Background extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            Positioned(
-              top: 20,
-              child: Image.asset("assets/images/logo.png",
-                  height: size.height * 0.4),
-            ),
             child,
           ],
         ),
