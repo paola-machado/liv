@@ -66,7 +66,7 @@ class _HomeState extends State<Home> {
         drawer: AppDrawer(),
         appBar: AppBar(
           iconTheme: IconThemeData(
-            color: Colors.lightBlue, //change your color here
+            color: Colors.lightBlue,
           ),
           backgroundColor: Colors.white,
           elevation: 0.0,

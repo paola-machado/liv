@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:liv/Screens/Landing.dart';
 
 class Background extends StatelessWidget {
   final Widget child;
